@@ -1,0 +1,9 @@
+{%include 'paginaInicio.html.twig' %}
+
+{% for cliente in clientes %}
+    <div id="cliente" style="border:1px solid black; margin: 5px; padding: 5px">
+         <a href="{{ path("ver_cliente",{id:cliente.id}) }}">{{ cliente.nombre }}</a> 
+         <a href="{{ path ("borrar_cliente", {id:cliente.id}) }}">Borrar</a>
+    </div>
+{%  endfor %}
+<a href="{{ path("insertar_cliente") }}"> Insertar un nuevo cliente</a>

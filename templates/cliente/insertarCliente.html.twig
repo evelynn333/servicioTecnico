@@ -1,0 +1,16 @@
+{# empty Twig template #}
+{#{ form(form_cliente) }#}
+
+{{ form_start(form_cliente,{'attr': {'class':'formulario_insertar_cliente'}}) }}
+{{ form_errors(form_cliente) }}
+
+{{ form_row(form_cliente.nombre, {'id':'nombre', 'label':'Nombre:'}) }}
+
+{{ form_row(form_cliente.apellidos, {'id':'apellidos',  'label':'Apellidos:'}) }}
+
+{{ form_row(form_cliente.telefono, {'id':'telefono',  'label':'Telefono:'}) }}
+
+{{ form_row(form_cliente.direccion, {'id':'direccion',  'label':'Direccion:'}) }}
+
+{{ form_row(form_cliente.Insertar, {'id':'boton_insertar_cliente:'}) }}
+{{ form_end(form_cliente) }}

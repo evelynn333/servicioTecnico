@@ -1,0 +1,12 @@
+{%include 'paginaInicio.html.twig' %}
+<link rel="stylesheet" href="css/estilos.css">    
+<h1>Incidencias</h1>
+    <br>
+{% for incidencia in mostarIncidencias %}
+   Titulo:<a href="{{ path("app_incidencias",{id:incidencia.id}) }}">{{ incidencia.titulo }}</a><br>
+   Fecha: {{ incidencia.fechaCreacion | date("Y-m-d")}}<br>
+   Cliente: {{ incidencia.cliente.nombre }}{{ incidencia.cliente.apellidos }}<br><br>
+
+{%  endfor %}
+
+<p><a href="{{ path("insertar_incidencia_desde") }}">Nueva Incidencia</a></p>

@@ -1,0 +1,17 @@
+{# empty Twig template #}
+
+<h2>Datos cliente</h2>
+Nombre: {{ cliente.nombre }}<br>
+Apellidos: {{ cliente.apellidos }}<br>
+Telefono: {{ cliente.telefono}}<br>
+Direccion: {{ cliente.direccion }}<br>
+
+<h2>Incidencias</h2>
+{% for incidencia in incidenciasCliente %}
+   Titulo: {{ incidencia.titulo }}<br>
+   Fecha creacion: {{ incidencia.fechaCreacion | date("Y-m-d") }}<br>
+   Estado: {{ incidencia.estado }}<br>
+   <a href="{{ path ("borrar_incidencia", {id:incidencia.id}) }}">Borrar</a>
+   <a href="{{ path ("editar_incidencia", {id:incidencia.id}) }}">Editar</a><br>
+   <a href="{{ path ("insertar_incidencia", {id:incidencia.id}) }}">Insertar</a><br>
+{% endfor %}
